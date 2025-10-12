@@ -22,3 +22,12 @@ Thumbs.db
 *.log
 *.tmp
 *.bak
+
+# Ignore all data files for large datasets
+project4-sales-forecasting/data/
+project3-customer-review-sentiment/data/
+.ipynb_checkpoints/
+__pycache__/
+.env
+*.zip
+*.csv
