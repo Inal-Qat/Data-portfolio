@@ -1,4 +1,4 @@
-#  Customer Churn Analysis
+#  Project 2: Customer Churn Analysis
 
 ##  Overview
 This project analyzes customer churn behavior for a telecommunications company.  
@@ -61,8 +61,4 @@ Key negative coefficients:
 - Demographic features have smaller but consistent effects.  
 - Business actions: consider discounts or loyalty programs for fiber-optic users and electronic check payers.
 
----
 
-## 🧑‍💻 Author
-**Yanal Kat**  
-Data Analyst / Business Information Systems  

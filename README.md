@@ -1,6 +1,6 @@
 # 💼 Data Science & Machine Learning Portfolio  
 **Author:** Yanal Kat (Inal-Qat)  
-**MSc. Business Information Systems**  
+**MSc Business Information Systems | Data Science, ML & Forecasting | Building intelligent systems for business impact**  
 
 A collection of end-to-end data projects showcasing analytical thinking, machine learning expertise, and clean, reproducible code.  
 Focus areas include data-driven decision making, predictive modeling, NLP, and forecasting for business applications.
