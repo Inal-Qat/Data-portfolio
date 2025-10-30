@@ -41,6 +41,6 @@ conda activate data-portfolio
 ```
 ---
 ## Contact
-Email: ynal.qat@gmail.com
-LinkedIn: linkedin.com/in/yanal-kat-4677b229
-Location: Augsburg, Germany
+* Email: ynal.qat@gmail.com
+* LinkedIn: linkedin.com/in/yanal-kat-4677b229
+* Location: Augsburg, Germany
