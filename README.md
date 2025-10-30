@@ -38,7 +38,7 @@ You can recreate it via:
 ```bash
 conda env create -f environment.yml
 conda activate data-portfolio
-
+```
 ---
 ## Contact
 Email: ynal.qat@gmail.com
