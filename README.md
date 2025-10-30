@@ -16,6 +16,7 @@ Focus areas include data-driven decision making, predictive modeling, NLP, and f
 | 3 | [Customer Review Sentiment](./project3-customer-review-sentiment) | Applied NLP techniques to classify customer reviews as positive or negative. | `NLP`, `TF-IDF`, `Logistic Regression`, `NLTK` |
 | 4 | [Sales Forecasting](./project4-sales-forecasting) | Forecasted product sales using machine learning regression models and feature importance analysis. | `RandomForestRegressor`, `XGBoost`, `Time Series`, `EDA` |
 | 5 | [Predictive Maintenance](./project5-predictive-maintenance) | Predicted potential machine failures using industrial sensor data for early maintenance alerts. | `RandomForestClassifier`, `XGBoost`, `Feature Importance`, `EDA` |
+| 6 | [Sales & Profit Dashboard (Power BI)](./project6-powerbi-dashboard) | Designed an interactive Power BI dashboard to analyze sales, and profit patterns using the Superstore dataset. | `Power BI`, `DAX`, `Data Visualization`, `Business Intelligence` |
 
 ---
 
@@ -24,15 +25,22 @@ Focus areas include data-driven decision making, predictive modeling, NLP, and f
 - Predictive Modeling (Classification & Regression)  
 - Natural Language Processing (Text Analysis)  
 - Forecasting & Time Series Analysis  
+- Dashboarding & Business Intelligence (Power BI / Tableau)  
 - Model Evaluation & Optimization  
 - Python (NumPy, pandas, scikit-learn, XGBoost, Matplotlib, Seaborn)
 
 ---
 
 ## 🧰 Environment Setup
-The portfolio uses a unified Anaconda environment for all projects.  
+The portfolio uses a unified Anaconda environment for all Python-based projects.  
 You can recreate it via:
 
 ```bash
 conda env create -f environment.yml
 conda activate data-portfolio
+
+---
+## Contact
+Email: ynal.qat@gmail.com
+LinkedIn: linkedin.com/in/yanal-kat-4677b229
+Location: Augsburg, Germany
