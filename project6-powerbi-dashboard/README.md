@@ -19,15 +19,14 @@ The goal is to explore sales, and profit patterns interactively while demonstrat
 - **Interactive Filters:** Year, Region, and Category slicers for dynamic insights  
 - **Navigation Buttons:** Multi-page layout for Overview, Sales Analysis, and Product Analysis
 
+## Insights
+- Profit margin fluctuates seasonally; some months show increased sales but lower profit due to discounts.
+- Technology and Office Supplies are top-performing categories in overall revenue.
+- Regional differences highlight opportunities for logistic optimization.
+
 ##  Example Calculations
 ```DAX
 Profit Margin = DIVIDE([Profit], [Sales], 0)
 Shipping Delay = DATEDIFF('Orders'[Order Date], 'Orders'[Ship Date], DAY) (didn't complete yet!)
 Order Year = YEAR('Orders'[Order Date])
 Month-Year = FORMAT('Orders'[Order Date], "MMM yyyy")
-
-## Insights
-- Profit margin fluctuates seasonally; some months show increased sales but lower profit due to discounts.
-- Technology and Office Supplies are top-performing categories in overall revenue.
-- Regional differences highlight opportunities for logistic optimization.
-
