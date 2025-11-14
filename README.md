@@ -17,6 +17,7 @@ Focus areas include data-driven decision making, predictive modeling, NLP, and f
 | 4 | [Sales Forecasting](./project4-sales-forecasting) | Forecasted product sales using machine learning regression models and feature importance analysis. | `RandomForestRegressor`, `XGBoost`, `Time Series`, `EDA` |
 | 5 | [Predictive Maintenance](./project5-predictive-maintenance) | Predicted potential machine failures using industrial sensor data for early maintenance alerts. | `RandomForestClassifier`, `XGBoost`, `Feature Importance`, `EDA` |
 | 6 | [Sales & Profit Dashboard (Power BI)](./project6-powerbi-dashboard) | Designed an interactive Power BI dashboard to analyze sales, and profit patterns using the Superstore dataset. | `Power BI`, `DAX`, `Data Visualization`, `Business Intelligence` |
+| 7 | [Educational LLM Assistant (RAG Application)](./project7-educational-llm-assistant) | Built a Retrieval-Augmented Generation (RAG) application for processing PDFs, answering questions via LLM, and evaluating responses using Bloom’s Taxonomy. Includes UMAP visualizations and a Streamlit UI. | Python, LangChain, FAISS, Sentence-Transformers, HuggingFace, Streamlit, UMAP |
 
 ---
 
@@ -26,6 +27,8 @@ Focus areas include data-driven decision making, predictive modeling, NLP, and f
 - Natural Language Processing (Text Analysis)  
 - Forecasting & Time Series Analysis  
 - Dashboarding & Business Intelligence (Power BI / Tableau)  
+- Retrieval-Augmented Generation (RAG)  
+- LLM Integration & Prompt Engineering  
 - Model Evaluation & Optimization  
 - Python (NumPy, pandas, scikit-learn, XGBoost, Matplotlib, Seaborn)
 
