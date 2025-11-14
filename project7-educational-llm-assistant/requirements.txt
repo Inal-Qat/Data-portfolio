@@ -1,0 +1,10 @@
+langchain==0.2.13
+langchain-community==0.2.12
+langchain-huggingface==0.0.3
+faiss-cpu
+sentence-transformers
+pypdf
+huggingface-hub
+matplotlib
+scikit-learn
+umap-learn
