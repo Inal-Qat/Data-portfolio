@@ -78,11 +78,11 @@ project7-educational-llm-assistant/
 
 Example image references:
 
-![Isolated Mode - Main](screenshots/app_isolated_main.png)  
-![Isolated Mode - Result](screenshots/app_isolated_result.png)  
-![Library Mode - Main](screenshots/app_library_main.png)  
-![Library Mode - Result 1](screenshots/app_library_result1.png)  
-![Library Mode - Result 2](screenshots/app_library_result2.png)
+![Isolated Mode](screenshots/app_isolated_mode_main.png)  
+![Isolated Mode - Result](screenshots/app_isolated_mode_result.png)  
+![Library Mode](screenshots/app_library_mode_main.png)  
+![Library Mode - Result 1](screenshots/app_library_mode_result1.png)  
+![Library Mode - Result 2](screenshots/app_library_mode_result2.png)
 
 ---
 
