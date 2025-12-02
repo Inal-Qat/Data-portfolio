@@ -10,15 +10,15 @@ Focus areas include data-driven decision making, predictive modeling, NLP, forec
 ## 🧩 Project Portfolio
 
 | # | Project | Description | Key Skills & Tools |
-|:-:|:---------|:-------------|:------------------|
-| 1 | [Expenses Analysis](./project1-expenses-analysis) | Exploratory data analysis of personal expenses and saving patterns through an interactive dashboard. | `Python`, `Pandas`, `Matplotlib`, `Seaborn` |
-| 2 | [Customer Churn Prediction](./project2-customer-churn) | Built a supervised ML model to predict telecom customer churn based on usage and demographics. | `scikit-learn`, `Logistic Regression`, `Feature Engineering` |
-| 3 | [Customer Review Sentiment](./project3-customer-review-sentiment) | Applied NLP techniques to classify customer reviews as positive or negative. | `NLP`, `TF-IDF`, `Logistic Regression`, `NLTK` |
-| 4 | [Sales Forecasting](./project4-sales-forecasting) | Forecasted product sales using machine learning regression models and feature importance analysis. | `RandomForestRegressor`, `XGBoost`, `Time Series`, `EDA` |
-| 5 | [Predictive Maintenance](./project5-predictive-maintenance) | Predicted potential machine failures using industrial sensor data for early maintenance alerts. | `RandomForestClassifier`, `XGBoost`, `Feature Engineering`, `EDA` |
-| 6 | [Sales & Profit Dashboard (Power BI)](./project6-powerbi-dashboard) | Designed an interactive Power BI dashboard to analyze sales and profit patterns using the Superstore dataset. | `Power BI`, `DAX`, `Data Visualization`, `Business Intelligence` |
-| 7 | [Educational LLM Assistant (RAG Application)](./project7-educational-llm-assistant) | Built a Retrieval-Augmented Generation (RAG) application for processing PDFs, answering questions via LLM, and evaluating responses using Bloom’s Taxonomy. Includes UMAP visualizations and a Streamlit UI. | `Python`, `LangChain`, `FAISS`, `Sentence-Transformers`, `HuggingFace`, `Streamlit`, `UMAP` |
-| 8 | [Agentic Customer Analytics Assistant](./project8-agentic-customer-analytics-assistant) | End-to-end intelligent analytics system combining ML, LangChain tools, LangGraph agent workflows, Groq LLaMA-3 models, and a Streamlit UI to analyze e-commerce customer behavior and return risk. | `Machine Learning`, `LangChain`, `LangGraph`, `Groq`, `Agents`, `Feature Engineering`, `Streamlit`, `scikit-learn` |
+|:-:|:--------|:-------------|:------------------|
+| 1 | [Agentic Customer Analytics Assistant](./project1-agentic-customer-analytics-assistant) | End-to-end intelligent analytics system combining classical ML with LangChain tools, LangGraph workflow orchestration, Groq LLaMA models, and a Streamlit UI. Analyzes customer behavior, computes insights, and performs tool-powered reasoning. | `Machine Learning`, `LangChain`, `LangGraph`, `Groq`, `Agents`, `Feature Engineering`, `Streamlit`, `scikit-learn` |
+| 2 | [Educational LLM Assistant (RAG Application)](./project2-educational-llm-assistant) | Retrieval-Augmented Generation system for processing PDFs and answering educational questions using embeddings, vector search, and LLM-based evaluation. Includes UMAP visualization and Streamlit interface. | `RAG`, `LangChain`, `FAISS`, `Sentence-Transformers`, `HuggingFace`, `Streamlit`, `UMAP` |
+| 3 | [Predictive Maintenance](./project3-predictive-maintenance) | Predicts potential machine failures using sensor data. Includes extensive feature engineering, model benchmarking, and explainability. | `RandomForestClassifier`, `XGBoost`, `EDA`, `Feature Engineering`, `scikit-learn` |
+| 4 | [Sales Forecasting](./project4-sales-forecasting) | Machine learning forecasting pipeline estimating product demand using regression models, feature importance analysis, and time-series preprocessing. | `Time Series`, `XGBoost`, `RandomForestRegressor`, `EDA`, `Visualization` |
+| 5 | [Customer Churn Prediction](./project5-customer-churn) | Supervised ML model predicting telecom customer churn using demographics, usage metrics, and service-level features. | `Logistic Regression`, `Feature Engineering`, `scikit-learn` |
+| 6 | [Customer Review Sentiment](./project6-customer-review-sentiment) | NLP classification pipeline to analyze customer feedback and categorize reviews as positive or negative. | `NLP`, `TF-IDF`, `Logistic Regression`, `NLTK` |
+| 7 | [Sales & Profit Dashboard (Power BI)](./project7-powerbi-dashboard) | Interactive executive dashboard exploring sales, profit, and regional performance using the Superstore dataset. | `Power BI`, `DAX`, `Data Visualization`, `Business Intelligence` |
+| 8 | [Expenses Analysis](./project8-expenses-analysis) | Exploratory data analysis of personal expenses with trend visualization and insights into spending behavior. | `Python`, `Pandas`, `Matplotlib`, `Seaborn` |
 
 ---
 
