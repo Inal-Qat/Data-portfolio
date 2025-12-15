@@ -1,38 +1,41 @@
-# 💼 Data Science & Machine Learning Portfolio  
+# 💼 Data Science & AI Portfolio  
 **Author:** Yanal Kat (Inal-Qat)  
-**MSc Business Information Systems | Data Science, ML & Forecasting | Building intelligent systems for business impact**  
+**MSc Business Information Systems | Data Science, AI & Machine Learning**  
 
-A collection of end-to-end data projects showcasing analytical thinking, machine learning expertise, and clean, reproducible code.  
-Focus areas include data-driven decision making, predictive modeling, NLP, forecasting, and modern AI agent systems.
+A curated portfolio of end-to-end data and AI projects demonstrating strong analytical thinking, modern machine learning practices, and the design of reliable, production-oriented AI systems.
+
+The focus spans classical data science, forecasting, NLP, and **agent-based LLM systems** for real-world analytical use cases.
 
 ---
 
 ## 🧩 Project Portfolio
 
 | # | Project | Description | Key Skills & Tools |
-|:-:|:--------|:-------------|:------------------|
-| 1 | [Agentic Customer Analytics Assistant](./project1-agentic-customer-analytics-assistant) | End-to-end intelligent analytics system combining classical ML with LangChain tools, LangGraph workflow orchestration, Groq LLaMA models, and a Streamlit UI. Analyzes customer behavior, computes insights, and performs tool-powered reasoning. | `Machine Learning`, `LangChain`, `LangGraph`, `Groq`, `Agents`, `Feature Engineering`, `Streamlit`, `scikit-learn` |
-| 2 | [Educational LLM Assistant (RAG Application)](./project2-educational-llm-assistant) | Retrieval-Augmented Generation system for processing PDFs and answering educational questions using embeddings, vector search, and LLM-based evaluation. Includes UMAP visualization and Streamlit interface. | `RAG`, `LangChain`, `FAISS`, `Sentence-Transformers`, `HuggingFace`, `Streamlit`, `UMAP` |
-| 3 | [Predictive Maintenance](./project3-predictive-maintenance) | Predicts potential machine failures using sensor data. Includes extensive feature engineering, model benchmarking, and explainability. | `RandomForestClassifier`, `XGBoost`, `EDA`, `Feature Engineering`, `scikit-learn` |
-| 4 | [Sales Forecasting](./project4-sales-forecasting) | Machine learning forecasting pipeline estimating product demand using regression models, feature importance analysis, and time-series preprocessing. | `Time Series`, `XGBoost`, `RandomForestRegressor`, `EDA`, `Visualization` |
-| 5 | [Customer Churn Prediction](./project5-customer-churn) | Supervised ML model predicting telecom customer churn using demographics, usage metrics, and service-level features. | `Logistic Regression`, `Feature Engineering`, `scikit-learn` |
-| 6 | [Customer Review Sentiment](./project6-customer-review-sentiment) | NLP classification pipeline to analyze customer feedback and categorize reviews as positive or negative. | `NLP`, `TF-IDF`, `Logistic Regression`, `NLTK` |
-| 7 | [Sales & Profit Dashboard (Power BI)](./project7-powerbi-dashboard) | Interactive executive dashboard exploring sales, profit, and regional performance using the Superstore dataset. | `Power BI`, `DAX`, `Data Visualization`, `Business Intelligence` |
-| 8 | [Expenses Analysis](./project8-expenses-analysis) | Exploratory data analysis of personal expenses with trend visualization and insights into spending behavior. | `Python`, `Pandas`, `Matplotlib`, `Seaborn` |
+|:-:|:--------|:------------|:------------------|
+| 1 | [Snowflake AI Analyst Agent](./project1-snowflake-ai-analyst-agent) | AI-powered analytics agent that translates natural language questions into safe, schema-aware SQL, executes them against Snowflake sample data, and returns data-backed answers via a Streamlit chat interface. Built with explicit agent state, guardrails, and transparent execution. | `LangGraph`, `LLM Agents`, `Snowflake`, `SQL`, `Streamlit`, `Pydantic`, `Groq`, `Agent Orchestration` |
+| 2 | [Agentic Customer Analytics Assistant](./project2-agentic-customer-analytics-assistant) | End-to-end intelligent analytics system combining classical ML with LangChain tools and LangGraph workflows. Performs customer analysis, insight generation, and tool-driven reasoning through a Streamlit UI. | `Machine Learning`, `LangChain`, `LangGraph`, `Groq`, `Agents`, `Feature Engineering`, `Streamlit`, `scikit-learn` |
+| 3 | [Educational LLM Assistant (RAG Application)](./project3-educational-llm-assistant) | Retrieval-Augmented Generation system for processing PDFs and answering educational questions using embeddings, vector search, and LLM-based evaluation. Includes UMAP visualization and Streamlit interface. | `RAG`, `LangChain`, `FAISS`, `Sentence-Transformers`, `HuggingFace`, `Streamlit`, `UMAP` |
+| 4 | [Predictive Maintenance](./project4-predictive-maintenance) | Machine learning pipeline predicting potential machine failures from sensor data, including feature engineering, model benchmarking, and explainability. | `RandomForest`, `XGBoost`, `EDA`, `Feature Engineering`, `scikit-learn` |
+| 5 | [Sales Forecasting](./project5-sales-forecasting) | Demand forecasting pipeline estimating product sales using regression models, time-series preprocessing, and feature importance analysis. | `Time Series`, `XGBoost`, `RandomForestRegressor`, `EDA`, `Visualization` |
+| 6 | [Customer Churn Prediction](./project6-customer-churn) | Supervised ML model predicting telecom customer churn using demographics, usage metrics, and service-level features. | `Logistic Regression`, `Feature Engineering`, `scikit-learn` |
+| 7 | [Customer Review Sentiment Analysis](./project7-customer-review-sentiment) | NLP classification pipeline analyzing customer reviews and classifying sentiment using traditional text-processing techniques. | `NLP`, `TF-IDF`, `Logistic Regression`, `NLTK` |
+| 8 | [Sales & Profit Dashboard (Power BI)](./project8-powerbi-dashboard) | Interactive executive dashboard exploring sales, profit, and regional performance using the Superstore dataset. | `Power BI`, `DAX`, `Data Visualization`, `Business Intelligence` |
+| 9 | [Expenses Analysis](./project9-expenses-analysis) | Exploratory data analysis of personal expenses with trend visualization and insights into spending behavior. | `Python`, `Pandas`, `Matplotlib`, `Seaborn` |
 
 ---
 
 ## 🧠 Core Competencies
+
 - Data Cleaning, Wrangling & Visualization  
 - Predictive Modeling (Classification & Regression)  
-- Natural Language Processing (Text Analysis)  
-- Forecasting & Time Series Analysis  
-- Dashboarding & Business Intelligence (Power BI / Tableau)  
+- Time Series Forecasting  
+- Natural Language Processing  
+- SQL & Analytical Querying  
 - Retrieval-Augmented Generation (RAG)  
-- AI Agents (LangChain / LangGraph)  
-- LLM Integration & Prompt Engineering  
-- Model Evaluation & Optimization  
-- Python (NumPy, pandas, scikit-learn, XGBoost, Matplotlib, Seaborn)
+- **LLM Agents & Agent Orchestration (LangChain / LangGraph)**  
+- AI Safety, Guardrails & Token-Aware Design  
+- Dashboarding & Business Intelligence (Power BI)  
+- Python (NumPy, pandas, scikit-learn, XGBoost, Matplotlib, Seaborn)  
 
 ---
 

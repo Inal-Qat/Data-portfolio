@@ -1,33 +1,43 @@
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Ignore Python cache files
+# =====================
+# Python / Jupyter
+# =====================
 __pycache__/
 *.py[cod]
 *.pyo
+.ipynb_checkpoints/
 
-# Ignore virtual environments
-.env/
+# =====================
+# Environments & secrets
+# =====================
+.env
+.env.*
 venv/
+.env/
 
-# Ignore system files
+# =====================
+# OS / Editor files
+# =====================
 .DS_Store
 Thumbs.db
-
-# Ignore editor/project files
 .vscode/
 .idea/
 
-# Ignore temporary or backup files
+# =====================
+# Logs & temp files
+# =====================
 *.log
 *.tmp
 *.bak
 
-# Ignore all data files for large datasets
-project4-sales-forecasting/data/
-project3-customer-review-sentiment/data/
-.ipynb_checkpoints/
-__pycache__/
-.env
-*.zip
+# =====================
+# Data & large artifacts
+# =====================
+**/data/
 *.csv
+*.zip
+
+# =====================
+# Models / binaries
+# =====================
+*.pkl
+*.pbix
