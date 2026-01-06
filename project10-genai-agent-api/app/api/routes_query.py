@@ -1,10 +1,11 @@
 import logging
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from app.schemas.query import QueryRequest, QueryResponse
 from app.utils.ids import new_request_id
 from app.utils.timing import timer_ms
 from app.core.config import settings
+from app.core.security import require_api_key
 from app.services.llm import call_llm, get_model_name
 from app.services.guardrails import basic_guardrails
 
@@ -12,7 +13,7 @@ router = APIRouter(tags=["query"])
 log = logging.getLogger("app.query")
 
 
-@router.post("/query", response_model=QueryResponse)
+@router.post("/query", response_model=QueryResponse, dependencies=[Depends(require_api_key)])
 async def query(payload: QueryRequest) -> QueryResponse:
     request_id = new_request_id()
     warnings = basic_guardrails(payload.user_input)
