@@ -6,6 +6,7 @@ from app.utils.ids import new_request_id
 from app.utils.timing import timer_ms
 from app.core.config import settings
 from app.core.security import require_api_key
+from app.core.request_context import get_request_id
 from app.services.llm import call_llm, get_model_name
 from app.services.guardrails import basic_guardrails
 from app.services.metrics import record_request
@@ -17,7 +18,7 @@ log = logging.getLogger("app.query")
 
 @router.post("/query", response_model=QueryResponse, dependencies=[Depends(require_api_key)])
 async def query(payload: QueryRequest) -> QueryResponse:
-    request_id = new_request_id()
+    request_id = get_request_id()
     warnings = basic_guardrails(payload.user_input)
 
     with timer_ms() as elapsed:
