@@ -19,17 +19,10 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
 
         try:
             response = await call_next(request)
+            response.headers["X-Request-ID"] = request_id
             return response
         finally:
             duration_ms = int((time.perf_counter() - start) * 1000)
 
-            log.info(
-                "request_completed",
-                extra={
-                    "request_id": request_id,
-                    "method": request.method,
-                    "path": request.url.path,
-                    "status_code": response.status_code if response else None,
-                    "latency_ms": duration_ms,
-                },
-            )
+            log.info(f"request_completed {request.method} {request.url.path} status={response.status_code if response else None} latency_ms={duration_ms}")
+
