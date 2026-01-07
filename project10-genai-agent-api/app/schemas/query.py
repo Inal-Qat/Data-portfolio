@@ -17,3 +17,5 @@ class QueryResponse(BaseModel):
     latency_ms: int
     model: str | None = None
     warnings: list[str] = []
+    tool_calls: list[str] = []
+

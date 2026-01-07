@@ -10,10 +10,12 @@ from app.core.request_context import get_request_id
 from app.services.llm import call_llm, get_model_name
 from app.services.guardrails import basic_guardrails
 from app.services.metrics import record_request
+from app.agents.llm_agent import LLMAgent
 
 
 router = APIRouter(tags=["query"])
 log = logging.getLogger("app.query")
+agent = LLMAgent()
 
 
 @router.post("/query", response_model=QueryResponse, dependencies=[Depends(require_api_key)])
@@ -23,7 +25,7 @@ async def query(payload: QueryRequest) -> QueryResponse:
 
     with timer_ms() as elapsed:
         try:
-            answer = await call_llm(payload.user_input)
+            answer, tool_calls = await agent.run(payload.user_input, session_id=payload.session_id)            
             success = True
         except Exception as e:
             success = False
@@ -43,4 +45,5 @@ async def query(payload: QueryRequest) -> QueryResponse:
         latency_ms=latency_ms,
         model=get_model_name() if settings.LLM_PROVIDER == "groq" else None,
         warnings=warnings,
+        tool_calls=tool_calls,
     )
