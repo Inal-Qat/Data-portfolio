@@ -8,6 +8,8 @@ from app.core.config import settings
 from app.core.security import require_api_key
 from app.services.llm import call_llm, get_model_name
 from app.services.guardrails import basic_guardrails
+from app.services.metrics import record_request
+
 
 router = APIRouter(tags=["query"])
 log = logging.getLogger("app.query")
@@ -21,11 +23,17 @@ async def query(payload: QueryRequest) -> QueryResponse:
     with timer_ms() as elapsed:
         try:
             answer = await call_llm(payload.user_input)
+            success = True
         except Exception as e:
+            success = False
             log.exception("llm_call_failed", extra={"request_id": request_id})
+            # record metrics before raising
+            latency_ms = max(1, elapsed())
+            record_request(success=False, latency_ms=latency_ms)
             raise HTTPException(status_code=500, detail=str(e))
 
     latency_ms = max(1, elapsed())  # avoid 0ms for tiny calls
+    record_request(success=True, latency_ms=latency_ms)
     log.info("query_ok", extra={"request_id": request_id, "latency_ms": latency_ms})
 
     return QueryResponse(
