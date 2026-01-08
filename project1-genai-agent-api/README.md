@@ -1,7 +1,7 @@
-# Project 10 — Production-Ready GenAI Agent API 
+# Project 1 — Production-Ready GenAI Agent API 
 ## Agentic AI | FastAPI | Pydantic | Docker
 
-Project 10 simulate an internal GenAI agent service that provides controlled, observable AI capabilities to business systems via a REST API.
+This Project simulate an internal GenAI agent service that provides controlled, observable AI capabilities to business systems via a REST API.
 
 ## Overview
 
@@ -38,14 +38,14 @@ Client Systems (BI, CRM, Internal Apps)
  
 ## Key Features
 
-*API & Infrastructure*
+**API & Infrastructure**
 - FastAPI service with OpenAPI documentation
 - Pydantic schemas for strict input/output validation
 - pydantic-settings for typed configuration via environment variables
 - API-Key authentication via `X-API-Key`
 - Docker & Docker Compose for reproducible local deployment
 
-*Observability*
+**Observability**
 - `/health` endpoint for service checks
 - `/metrics` endpoint (Prometheus-style counters & latency)
 - Request-scoped middleware with:
@@ -53,7 +53,7 @@ Client Systems (BI, CRM, Internal Apps)
     + consistent structured logging
 - Execution timing and success/failure tracking
 
-*Agentic Behavior*
+**Agentic Behavior**
 
 - Clean Agent abstraction separating API layer from AI logic
 - Deterministic tool routing:
@@ -107,7 +107,7 @@ The agent follows simple, explicit decision rules:
 2. Time queries → Time tool (timezone-aware)
 3. All other input → LLM call
 
-This design allows new tools or LangGraph-based workflows to be added *without changing the API contract*.
+This design allows new tools or LangGraph-based workflows to be added **without changing the API contract**.
 
 ---
 

@@ -1,18 +1,29 @@
 # =====================
-# Python / Jupyter
+# Python
 # =====================
 __pycache__/
 *.py[cod]
 *.pyo
 .ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
 
 # =====================
 # Environments & secrets
 # =====================
 .env
-.env.*
+.env.local
+.env.prod
+.env.test
 venv/
-.env/
+.venv/
+.conda/
 
 # =====================
 # OS / Editor files
@@ -32,8 +43,7 @@ Thumbs.db
 # =====================
 # Data & large artifacts
 # =====================
-**/data/
-*.csv
+**/data/**/*.csv
 *.zip
 
 # =====================

@@ -2,7 +2,7 @@ services:
   api:
     build:
       context: ..
-      dockerfile: project10-genai-agent-api/Dockerfile
+      dockerfile: project1-genai-agent-api/Dockerfile
     ports:
       - "8000:8000"
     env_file:
