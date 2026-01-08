@@ -14,6 +14,9 @@ The project demonstrates how to deploy a production-style GenAI agent as a backe
 
 This is not a chatbot demo — it is an AI capability exposed as a service that other systems can reliably integrate with.
 
+<img src="images/shot1.png" width="800"/>
+<img src="images/shot2.png" width="800"/>
+<img src="images/shot3.png" width="800"/>
 ---
 
 ## Architecture (High Level)
