@@ -2,6 +2,9 @@ from app.agents.base import Agent
 from app.services.llm import call_llm
 from app.services.tool_router import looks_like_math
 from app.tools.calculator import safe_eval
+from app.tools.time_tool import now_in_timezone
+from app.services.tool_router import looks_like_time_query, extract_timezone
+
 
 class LLMAgent(Agent):
     async def run(self, user_input: str, session_id: str | None = None) -> tuple[str, list[str]]:
@@ -12,6 +15,12 @@ class LLMAgent(Agent):
             expr = text.replace("^", "**")
             result = safe_eval(expr)
             return (str(result), ["calculator.safe_eval"])
+        
+        # Tool path: time
+        if looks_like_time_query(text):
+            tz = extract_timezone(text) or "UTC"
+            ts = now_in_timezone(tz)
+            return (f"{tz}: {ts}", ["time.now_in_timezone"])
 
         # Default path: LLM
         answer = await call_llm(text)
