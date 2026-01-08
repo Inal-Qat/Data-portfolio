@@ -5,7 +5,7 @@ class Agent(ABC):
     async def run(self, user_input: str, session_id: str | None = None) -> tuple[str, list[str]]:
         """
         Returns:
-          - answer (str)
+          - answer: the agent's final answer
           - tool_calls (list[str])  # simple trace of what tools were used
         """
         raise NotImplementedError

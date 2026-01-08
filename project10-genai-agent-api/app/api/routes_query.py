@@ -29,7 +29,7 @@ async def query(payload: QueryRequest) -> QueryResponse:
             success = True
         except Exception as e:
             success = False
-            log.exception("llm_call_failed", extra={"request_id": request_id})
+            log.exception("agent_run_failed", extra={"request_id": request_id})
             # record metrics before raising
             latency_ms = max(1, elapsed())
             record_request(success=False, latency_ms=latency_ms)
