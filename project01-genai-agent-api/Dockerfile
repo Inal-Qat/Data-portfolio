@@ -13,8 +13,8 @@ COPY project1-genai-agent-api/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy application code
-COPY project1-genai-agent-api/app /app/app
-COPY project1-genai-agent-api/README.md /app/README.md
+COPY project01-genai-agent-api/app /app/app
+COPY project01-genai-agent-api/README.md /app/README.md
 
 EXPOSE 8000
 CMD ["uvicorn", "app.main:app", "--host=0.0.0.0", "--port=8000"]
