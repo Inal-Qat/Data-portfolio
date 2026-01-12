@@ -1,5 +1,5 @@
 # 🧠 Agentic Customer Analytics Assistant  
-### Project 8 — ML + LangChain + LangGraph + Groq + Streamlit
+### ML + LangChain + LangGraph + Groq + Streamlit
 
 A full-stack AI analytics system that combines:
 

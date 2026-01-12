@@ -1,4 +1,4 @@
-# Project 4: Retail Sales Forecasting with Machine Learning
+# Retail Sales Forecasting with Machine Learning
 
 **Goal:** Build and evaluate machine learning models to predict daily product sales across multiple stores and product families.  
 This project explores data preprocessing, feature engineering, and model evaluation using **Random Forest** and **XGBoost** regressors.

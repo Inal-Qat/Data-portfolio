@@ -1,4 +1,4 @@
-#  Project 6 – Sales & Profit Analysis Dashboard (Power BI)
+#  Sales & Profit Analysis Dashboard (Power BI)
 
 ##  Overview
 This Power BI dashboard visualizes key sales performance indicators using the **Superstore dataset**.  

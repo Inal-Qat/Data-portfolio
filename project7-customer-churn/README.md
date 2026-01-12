@@ -1,4 +1,4 @@
-#  Project 2: Customer Churn Analysis
+#  Customer Churn Analysis
 
 ##  Overview
 This project analyzes customer churn behavior for a telecommunications company.  

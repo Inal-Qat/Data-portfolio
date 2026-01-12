@@ -1,4 +1,4 @@
-# Project 3: Customer Review Sentiment Analysis (TripAdvisor)
+# Customer Review Sentiment Analysis (TripAdvisor)
 
 This project performs **sentiment analysis** on TripAdvisor hotel reviews using **Natural Language Processing (NLP)**.
 

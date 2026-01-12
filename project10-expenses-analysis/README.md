@@ -1,4 +1,4 @@
-# Project 1: Personal Expenses Analysis
+# Personal Expenses Analysis
 
 
 

@@ -1,4 +1,4 @@
-# Project 5: Predictive Maintenance (Machine Failure Prediction)
+# Predictive Maintenance (Machine Failure Prediction)
 
 ## Overview
 This project explores **predictive maintenance** using the publicly available **AI4I 2020 dataset**  

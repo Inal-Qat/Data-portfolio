@@ -1,4 +1,4 @@
-# Project 1 — Production-Ready GenAI Agent API 
+# Production-Ready GenAI Agent API 
 ## Agentic AI | FastAPI | Pydantic | Docker
 
 This Project simulate an internal GenAI agent service that provides controlled, observable AI capabilities to business systems via a REST API.
