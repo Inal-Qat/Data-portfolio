@@ -1,8 +1,26 @@
+import json
 from typing import Any, Dict, Optional
 
 from mcp import StdioServerParameters
 from mcp.client.session import ClientSession
 from mcp.client.stdio import stdio_client
+
+def parse_mcp_content(content: Any) -> Any:
+    """
+    Convert MCP content items (e.g., TextContent) into a clean Python object.
+    If the tool returns JSON text, parse it into dict/list.
+    """
+    # Most tool outputs arrive as a list of content items
+    if isinstance(content, list) and content:
+        first = content[0]
+        if hasattr(first, "text"):
+            text = first.text
+            # Try parsing JSON
+            try:
+                return json.loads(text)
+            except Exception:
+                return text
+    return content
 
 
 class MCPClient:
@@ -37,4 +55,4 @@ class MCPClient:
         if not self.session:
             raise RuntimeError("MCP session not initialized")
         result = await self.session.call_tool(name=name, arguments=arguments)
-        return result.content
+        return parse_mcp_content(result.content)
