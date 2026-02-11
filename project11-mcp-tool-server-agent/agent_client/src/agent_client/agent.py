@@ -3,6 +3,7 @@ import time
 from typing import Any, Dict
 
 from agent_client.tool_router import choose_tool
+from agent_client.llm import call_llm
 
 
 class Agent:
@@ -16,17 +17,14 @@ class Agent:
 
         if tool_name:
             start = time.perf_counter()
-            result = await self.mcp.call_tool(
-                tool_name,
-                {"expression": user_input}
-            )
+            text = await call_llm(user_input)
             latency_ms = int((time.perf_counter() - start) * 1000)
 
             return {
                 "request_id": request_id,
-                "tool_used": tool_name,
+                "tool_used": None,
                 "latency_ms": latency_ms,
-                "answer": result,
+                "answer": text,
             }
 
         # Placeholder for LLM fallback (we’ll wire Groq next)
