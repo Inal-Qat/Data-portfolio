@@ -20,7 +20,11 @@ async def main():
     client = MCPClient(server_params)
     await client.connect()
 
-    response = await client.call_tool("ping", {})
+    #response = await client.call_tool("ping", {})
+    response = await client.call_tool(
+    "calculator_safe_eval",
+    {"expression": "12 * (3 + 4)"}
+)
     print(json.dumps(response, indent=2, ensure_ascii=False))
     
     await client.close()
