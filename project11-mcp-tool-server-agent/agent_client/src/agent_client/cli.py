@@ -1,14 +1,16 @@
 import asyncio
 import json
 import os
+import sys
 
 from mcp import StdioServerParameters
-
 from agent_client.mcp_client import MCPClient
+from agent_client.agent import Agent
 
 
 async def main():
-    # IMPORTANT: server must see mcp_server/src on its PYTHONPATH too
+    user_input = sys.argv[1] if len(sys.argv) > 1 else "12 * (3 + 4)"
+
     env = dict(os.environ)
 
     server_params = StdioServerParameters(
@@ -20,13 +22,11 @@ async def main():
     client = MCPClient(server_params)
     await client.connect()
 
-    #response = await client.call_tool("ping", {})
-    response = await client.call_tool(
-    "calculator_safe_eval",
-    {"expression": "12 * (3 + 4)"}
-)
-    print(json.dumps(response, indent=2, ensure_ascii=False))
-    
+    agent = Agent(client)
+    response = await agent.run(user_input)
+
+    print(json.dumps(response, indent=2))
+
     await client.close()
 
 
