@@ -3,14 +3,15 @@ import re
 
 def choose_tool(user_input: str) -> str | None:
     """
-    Very simple rule-based routing:
-    If input looks like math → use calculator tool.
-    Otherwise → return None (LLM fallback).
+    Route math-like expressions to calculator tool.
     """
 
-    math_pattern = r"^[\d\.\+\-\*\/\(\)\s%]+$"
+    cleaned = user_input.strip()
 
-    if re.match(math_pattern, user_input.strip()):
-        return "calculator_safe_eval"
+    # Detect if string contains at least one math operator
+    if any(op in cleaned for op in ["+", "-", "*", "/", "%"]):
+        # Ensure it only contains allowed characters
+        if re.fullmatch(r"[\d\.\+\-\*\/\(\)\s%]+", cleaned):
+            return "calculator_safe_eval"
 
     return None

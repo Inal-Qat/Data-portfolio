@@ -15,21 +15,30 @@ class Agent:
 
         tool_name = choose_tool(user_input)
 
+        # 1) Tool path
         if tool_name:
             start = time.perf_counter()
-            text = await call_llm(user_input)
+            result = await self.mcp.call_tool(
+                tool_name,
+                {"expression": user_input}
+            )
             latency_ms = int((time.perf_counter() - start) * 1000)
 
             return {
                 "request_id": request_id,
-                "tool_used": None,
+                "tool_used": tool_name,
                 "latency_ms": latency_ms,
-                "answer": text,
+                "answer": result,
             }
 
-        # Placeholder for LLM fallback (we’ll wire Groq next)
+        # 2) LLM fallback path
+        start = time.perf_counter()
+        text = await call_llm(user_input)
+        latency_ms = int((time.perf_counter() - start) * 1000)
+
         return {
             "request_id": request_id,
             "tool_used": None,
-            "answer": "LLM fallback not yet implemented"
-        }
+            "latency_ms": latency_ms,
+            "answer": text,
+        }    
