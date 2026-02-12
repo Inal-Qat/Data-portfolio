@@ -1,12 +1,17 @@
 import re
 
+TIME_HINTS = ("time", "zeit", "uhr", "now", "current time", "date", "datum")
 
 def choose_tool(user_input: str) -> str | None:
     """
     Route math-like expressions to calculator tool.
     """
 
-    cleaned = user_input.strip()
+    
+    cleaned = user_input.strip().lower()
+
+    if any(h in cleaned for h in TIME_HINTS):
+        return "time_now_in_timezone"
 
     # Detect if string contains at least one math operator
     if any(op in cleaned for op in ["+", "-", "*", "/", "%"]):

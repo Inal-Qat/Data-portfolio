@@ -1,5 +1,6 @@
 from fastmcp import FastMCP
 from mcp_server.tools.calculator import safe_eval
+from mcp_server.tools.time_tool import now_in_timezone
 
 mcp = FastMCP("project11-tools")
 
@@ -15,6 +16,11 @@ def calculator_safe_eval(expression: str) -> dict:
     """
     result = safe_eval(expression)
     return {"result": result}
+
+@mcp.tool()
+def time_now_in_timezone(tz: str = "Europe/Berlin") -> dict:
+    """Return current time in the given timezone (IANA). Default: Europe/Berlin."""
+    return {"timezone": tz, "now": now_in_timezone(tz)}
 
 if __name__ == "__main__":
     mcp.run()
