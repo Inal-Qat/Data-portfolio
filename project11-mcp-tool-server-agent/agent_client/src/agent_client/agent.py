@@ -18,10 +18,15 @@ class Agent:
         # 1) Tool path
         if tool_name:
             start = time.perf_counter()
-            result = await self.mcp.call_tool(
-                tool_name,
-                {"expression": user_input}
-            )
+
+            if tool_name == "calculator_safe_eval":
+                args = {"expression": user_input}
+            elif tool_name == "time_now_in_timezone":
+                args = {"tz": "Europe/Berlin"}  # I can also parse timezone from text
+            else:
+                args = {}
+
+            result = await self.mcp.call_tool(tool_name, args)
             latency_ms = int((time.perf_counter() - start) * 1000)
 
             return {
