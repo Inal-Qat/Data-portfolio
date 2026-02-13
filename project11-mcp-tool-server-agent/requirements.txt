@@ -3,3 +3,5 @@ mcp
 pydantic
 python-dotenv
 groq
+fastapi
+uvicorn[standard]
