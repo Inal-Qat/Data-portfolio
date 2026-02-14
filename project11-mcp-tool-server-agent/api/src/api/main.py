@@ -25,13 +25,22 @@ async def lifespan(app: FastAPI):
     load_dotenv()
 
     env = dict(os.environ)
-    server_params = StdioServerParameters(
-        command="python",
-        args=["-m", "mcp_server.main"],
-        env=env,
-    )
 
-    mcp_client = MCPClient(server_params)
+    # --- Choose transport dynamically 
+    mcp_url = os.getenv("MCP_SERVER_URL")
+
+    if mcp_url:
+        # Docker / network mode
+        mcp_client = MCPClient(server_url=mcp_url)
+    else:
+        # Local dev spawn via stdio
+        server_params = StdioServerParameters(
+            command="python",
+            args=["-m", "mcp_server.main"],
+            env=env,
+        )
+        mcp_client = MCPClient(server_params=server_params)
+    
     await mcp_client.connect()
 
     app.state.mcp_client = mcp_client

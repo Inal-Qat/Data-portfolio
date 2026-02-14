@@ -1,3 +1,4 @@
+import os 
 from fastmcp import FastMCP
 from mcp_server.tools.calculator import safe_eval
 from mcp_server.tools.time_tool import now_in_timezone
@@ -23,4 +24,13 @@ def time_now_in_timezone(tz: str = "Europe/Berlin") -> dict:
     return {"timezone": tz, "now": now_in_timezone(tz)}
 
 if __name__ == "__main__":
-    mcp.run()
+    transport = os.getenv("MCP_TRANSPORT", "stdio")  # stdio (local) or http (docker)
+    host = os.getenv("MCP_HOST", "0.0.0.0")
+    port = int(os.getenv("MCP_PORT", "8001"))
+    path = os.getenv("MCP_PATH", "/mcp")
+
+    if transport == "http":
+        mcp.run(transport="http", host=host, port=port, path=path)
+    else:
+        mcp.run()
+
