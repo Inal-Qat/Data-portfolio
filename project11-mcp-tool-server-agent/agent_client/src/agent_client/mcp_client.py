@@ -35,18 +35,32 @@ class MCPClient:
         self.session: Optional[ClientSession] = None
 
     async def connect(self) -> None:
-        # --- choose transport ---
-        if self.server_url:
-            self._transport_cm = streamable_http_client(self.server_url)
-            read_stream, write_stream = await self._transport_cm.__aenter__()
-        else:
-            self._transport_cm = stdio_client(self.server_params)  # type: ignore[arg-type]
-            read_stream, write_stream = await self._transport_cm.__aenter__()
+        """
+        Establish MCP session.
+        If anything fails mid-way, clean up in the SAME task to avoid AnyIO cancel-scope issues.
+        """
+        try:
+            # choose transport
+            if self.server_url:
+                self._transport_cm = streamable_http_client(self.server_url)
+            else:
+                self._transport_cm = stdio_client(self.server_params)  # type: ignore[arg-type]
 
-        # --- session ---
-        self._session_cm = ClientSession(read_stream, write_stream)
-        self.session = await self._session_cm.__aenter__()
-        await self.session.initialize()
+            entered = await self._transport_cm.__aenter__()
+            read_stream, write_stream = entered[0], entered[1]
+
+            self._session_cm = ClientSession(read_stream, write_stream)
+            self.session = await self._session_cm.__aenter__()
+
+            await self.session.initialize()
+
+        except Exception:
+            # critical: cleanup partial open resources
+            try:
+                await self.close()
+            except Exception:
+                pass
+            raise
 
     async def close(self) -> None:
         if self._session_cm:

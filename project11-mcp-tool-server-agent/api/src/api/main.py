@@ -1,5 +1,7 @@
 import os
 import time
+import asyncio
+import logging
 from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
@@ -19,6 +21,7 @@ from api.schemas import QueryRequest, QueryResponse
 from agent_client.agent import Agent
 from agent_client.mcp_client import MCPClient
 
+logger = logging.getLogger("api")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -26,29 +29,57 @@ async def lifespan(app: FastAPI):
 
     env = dict(os.environ)
 
-    # --- Choose transport dynamically 
-    mcp_url = os.getenv("MCP_SERVER_URL")
+    def make_mcp_client() -> MCPClient:
+        """
+        Create a fresh MCPClient each attempt.
+        - If MCP_SERVER_URL is set -> connect over HTTP/SSE (docker)
+        - Else -> spawn server via stdio (local dev)
+        """
+        mcp_url = os.getenv("MCP_SERVER_URL")
+        if mcp_url:
+            return MCPClient(server_url=mcp_url)
 
-    if mcp_url:
-        # Docker / network mode
-        mcp_client = MCPClient(server_url=mcp_url)
-    else:
-        # Local dev spawn via stdio
         server_params = StdioServerParameters(
             command="python",
             args=["-m", "mcp_server.main"],
             env=env,
         )
-        mcp_client = MCPClient(server_params=server_params)
-    
-    await mcp_client.connect()
+        return MCPClient(server_params=server_params)
+
+    retries = int(os.getenv("MCP_CONNECT_RETRIES", "30"))
+    delay = float(os.getenv("MCP_CONNECT_DELAY_SEC", "0.5"))
+
+    mcp_client: MCPClient | None = None
+    last_err: Exception | None = None
+
+    for attempt in range(1, retries + 1):
+        mcp_client = make_mcp_client()
+        try:
+            await mcp_client.connect()
+            last_err = None
+            break
+        except Exception as e:
+            last_err = e
+            try:
+                await mcp_client.close()
+            except Exception:
+                pass
+
+            logger.warning(
+                f"MCP connect failed (attempt {attempt}/{retries}): {e}. Retrying in {delay}s"
+            )
+            await asyncio.sleep(delay)
+
+    if last_err or mcp_client is None:
+        raise RuntimeError(f"Failed to connect to MCP server after {retries} attempts") from last_err
 
     app.state.mcp_client = mcp_client
     app.state.agent = Agent(mcp_client, default_tz="Europe/Berlin")
 
-    yield
-
-    await mcp_client.close()
+    try:
+        yield
+    finally:
+        await mcp_client.close()
 
 
 app = FastAPI(title="Project 11 - MCP Agent API", lifespan=lifespan)
