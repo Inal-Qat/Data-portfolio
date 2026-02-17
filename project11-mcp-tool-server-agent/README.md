@@ -11,6 +11,7 @@ This project demonstrates a production-style AI integration architecture using:
 
 The system separates tool execution from agent logic and exposes the agent via API, then integrates it into a workflow automation platform (n8n).
 
+<img src="images/agent-query.png" width="800"/>
 ---
 
 ## 🧠 Architecture Overview
