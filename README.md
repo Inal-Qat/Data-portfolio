@@ -1,10 +1,20 @@
-# 💼 Data Science & AI Portfolio  
-**Author:** Yanal Kat (Inal-Qat)  
-**MSc Business Information Systems | Applied AI, Data Science & Machine Learning**  
+# 💼 Applied AI & Agent Systems Portfolio  
+**Author:** Yanal Kat (Inal-Qat)**  
+**MSc Business Information Systems | AI Platform Engineering & Applied Machine Learning**
 
-A curated portfolio of end-to-end Data & AI projects demonstrating strong analytical thinking, modern machine learning practices, and the design of production-oriented, agentic AI systems.
+This portfolio showcases production-oriented AI systems that move beyond notebooks into deployable, integration-ready architectures.
 
-The portfolio spans classical data science, forecasting, NLP, RAG, and LLM-based agent services designed for real-world business integration.
+It combines:
+
+- Classical machine learning
+- Retrieval-Augmented Generation (RAG)
+- LLM-based agent systems
+- MCP tool orchestration
+- API-first AI services
+- Workflow automation (n8n)
+- Observability & containerized deployment
+
+The focus is on building **enterprise-ready AI platforms** — not just models.
 
 ---
 
@@ -12,42 +22,62 @@ The portfolio spans classical data science, forecasting, NLP, RAG, and LLM-based
 
 | # | Project | Description | Key Skills & Tools |
 |:-:|:--------|:------------|:------------------|
-| 1 | [Production-Ready GenAI Agent API](./project01-genai-agent-api) | Internal GenAI agent service exposed via a REST API. Implements agent-based decision logic, tool routing (calculator, time), strict request/response validation, authentication, observability (metrics, logging), and Dockerized deployment. Designed as an AI backend service for integration into business systems. | `FastAPI`, `Pydantic`, `Docker`, `LLM Agents`, `Agent Architecture`, `API Design`, `Observability`, `Groq` |
-| 2 | [Snowflake AI Analyst Agent](./project02-snowflake-ai-analyst-agent) | AI-powered analytics agent that translates natural language questions into safe, schema-aware SQL, executes them against Snowflake sample data, and returns data-backed answers via a Streamlit chat interface. Built with explicit agent state, guardrails, and transparent execution. | `LangGraph`, `LLM Agents`, `Snowflake`, `SQL`, `Streamlit`, `Pydantic`, `Groq`, `Agent Orchestration` |
-| 3 | [Agentic Customer Analytics Assistant](./project03-agentic-customer-analytics-assistant) | End-to-end intelligent analytics system combining classical ML with LangChain tools and LangGraph workflows. Performs customer analysis, insight generation, and tool-driven reasoning through a Streamlit UI. | `Machine Learning`, `LangChain`, `LangGraph`, `Groq`, `Agents`, `Feature Engineering`, `Streamlit`, `scikit-learn` |
-| 4 | [Educational LLM Assistant (RAG Application)](./project04-educational-llm-assistant) | Retrieval-Augmented Generation system for processing PDFs and answering educational questions using embeddings, vector search, and LLM-based evaluation. Includes UMAP visualization and Streamlit interface. | `RAG`, `LangChain`, `FAISS`, `Sentence-Transformers`, `HuggingFace`, `Streamlit`, `UMAP` |
-| 5 | [Predictive Maintenance](./project05-predictive-maintenance) | Machine learning pipeline predicting potential machine failures from sensor data, including feature engineering, model benchmarking, and explainability. | `RandomForest`, `XGBoost`, `EDA`, `Feature Engineering`, `scikit-learn` |
-| 6 | [Sales Forecasting](./project06-sales-forecasting) | Demand forecasting pipeline estimating product sales using regression models, time-series preprocessing, and feature importance analysis. | `Time Series`, `XGBoost`, `RandomForestRegressor`, `EDA`, `Visualization` |
-| 7 | [Customer Churn Prediction](./project07-customer-churn) | Supervised ML model predicting telecom customer churn using demographics, usage metrics, and service-level features. | `Logistic Regression`, `Feature Engineering`, `scikit-learn` |
-| 8 | [Customer Review Sentiment Analysis](./project08-customer-review-sentiment) | NLP classification pipeline analyzing customer reviews and classifying sentiment using traditional text-processing techniques. | `NLP`, `TF-IDF`, `Logistic Regression`, `NLTK` |
-| 9 | [Sales & Profit Dashboard (Power BI)](./project09-powerbi-dashboard) | Interactive executive dashboard exploring sales, profit, and regional performance using the Superstore dataset. | `Power BI`, `DAX`, `Data Visualization`, `Business Intelligence` |
-| 10 | [Expenses Analysis](./project10-expenses-analysis) | Exploratory data analysis of personal expenses with trend visualization and insights into spending behavior. | `Python`, `Pandas`, `Matplotlib`, `Seaborn` |
+| 1 | [MCP Tool Server + Agent Runtime Platform](./project01-mcp-tool-server-agent) | Production-style AI integration architecture separating MCP tool server from agent runtime. Includes HTTP/SSE transport, FastAPI API layer, Prometheus metrics, Docker multi-container setup, and n8n workflow orchestration. Demonstrates enterprise-ready agent platform design. | `MCP`, `FastAPI`, `Docker`, `Prometheus`, `LLM Agents`, `AI Architecture`, `n8n`, `Groq`, `Observability` |
+| 2 | [Production-Ready GenAI Agent API](./project02-genai-agent-api) | Internal GenAI agent service exposed via REST API with structured validation, authentication, logging, and Dockerized deployment. | `FastAPI`, `Pydantic`, `Docker`, `LLM Agents`, `API Design`, `Groq` |
+| 3 | [Snowflake AI Analyst Agent](./project03-snowflake-ai-analyst-agent) | Natural-language-to-SQL agent with safe query generation and execution against Snowflake sample data. | `LangGraph`, `Snowflake`, `SQL`, `Streamlit`, `Agent Orchestration` |
+| 4 | [Agentic Customer Analytics Assistant](./project04-agentic-customer-analytics-assistant) | ML + agent workflow system combining classical modeling and tool-driven reasoning. | `Machine Learning`, `LangChain`, `LangGraph`, `Groq` |
+| 5 | [Educational LLM Assistant (RAG Application)](./project05-educational-llm-assistant) | Retrieval-Augmented Generation system for PDF question answering with vector search. | `RAG`, `FAISS`, `Sentence-Transformers`, `Streamlit` |
+| 6 | [Predictive Maintenance](./project06-predictive-maintenance) | Machine learning pipeline predicting machine failures from sensor data. | `RandomForest`, `XGBoost`, `Feature Engineering` |
+| 7 | [Sales Forecasting](./project07-sales-forecasting) | Demand forecasting pipeline using regression models and time-series preprocessing. | `Time Series`, `XGBoost` |
+| 8 | [Customer Churn Prediction](./project08-customer-churn) | Supervised ML model predicting telecom churn. | `Logistic Regression`, `scikit-learn` |
+| 9 | [Customer Review Sentiment Analysis](./project09-customer-review-sentiment) | NLP sentiment classification pipeline. | `TF-IDF`, `NLTK` |
+| 10 | [Sales & Profit Dashboard (Power BI)](./project10-powerbi-dashboard) | Executive dashboard exploring sales and profit metrics. | `Power BI`, `DAX` |
+| 11 | [Expenses Analysis](./project11-expenses-analysis) | Exploratory data analysis of personal expense trends. | `Pandas`, `Visualization` |
 
 ---
 
 ## 🧠 Core Competencies
 
-- Data Cleaning, Wrangling & Visualization  
-- Predictive Modeling (Classification & Regression)  
-- Time Series Forecasting  
-- Natural Language Processing (NLP) 
-- SQL & Analytical Querying  
-- Retrieval-Augmented Generation (RAG)  
-- **LLM Agents & Agentic System Design (LangChain / LangGraph)**  
-- **API-First AI Services (FastAPI, Pydantic, Docker)**
-- AI Safety, Guardrails & Observability 
-- Dashboarding & Business Intelligence (Power BI)  
-- Python (NumPy, pandas, scikit-learn, XGBoost, Matplotlib, Seaborn)  
+### AI & Agent Systems
+- LLM Agents & Agentic Architecture (LangChain / LangGraph / MCP)
+- Tool-Oriented Agent Design (Model Context Protocol)
+- Retrieval-Augmented Generation (RAG)
+- Guardrails, Routing & Structured Tool Traces
+- Prompt Engineering & LLM Evaluation
+
+### AI Platform & Integration
+- API-First AI Services (FastAPI, Pydantic)
+- MCP Tool Servers & HTTP/SSE Transport
+- Workflow Orchestration (n8n)
+- Containerized Multi-Service Architectures (Docker Compose)
+- Observability & Metrics (Prometheus)
+- Structured Logging & Latency Monitoring
+
+### Machine Learning & Analytics
+- Classification & Regression Modeling
+- Time Series Forecasting
+- Feature Engineering & EDA
+- NLP & Text Classification
+- SQL & Analytical Querying
+
+### Data & BI
+- Data Cleaning & Wrangling (pandas, NumPy)
+- Visualization (Matplotlib, Seaborn)
+- Business Intelligence (Power BI, DAX)
 
 ---
 
-## Portfolio Focus
-This portfolio emphasizes applied, integration-ready AI — moving beyond notebooks and demos toward:
+## 🎯 Portfolio Focus
 
-- AI services
-- agent orchestration
-- production constraints
-- real-world business integration
+This portfolio emphasizes applied, integration-ready AI:
+
+- Designing AI services rather than standalone notebooks
+- Separating tool execution from agent runtime
+- Building deployable multi-container architectures
+- Instrumenting systems with observability and metrics
+- Integrating AI into real-world workflows (n8n)
+
+The goal is to bridge machine learning, software engineering, and enterprise AI architecture.
 
 ---
 
