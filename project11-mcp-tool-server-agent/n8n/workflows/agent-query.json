@@ -1,0 +1,196 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "agent-query",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -480,
+        0
+      ],
+      "id": "85e7f755-85a7-44ad-844d-694a53b4afbe",
+      "name": "Webhook",
+      "webhookId": "88034ca9-3d1f-42c5-9f77-44a18185f77f"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://agent-api:8000/query",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{$json.body.text}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -240,
+        0
+      ],
+      "id": "8891f42f-c89f-45ad-9633-35de15484e0d",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "88b98ed3-1e21-43d1-9ccf-0a32510d3820",
+              "leftValue": "={{$json.tool_calls.length}}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -32,
+        0
+      ],
+      "id": "47632cb3-d1eb-4529-8c28-bef7a53c1e76",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "815c597a-58b6-4858-83ec-e68705881e15",
+              "name": "tool",
+              "value": "={{$json.tool_calls[0].name}}",
+              "type": "string"
+            },
+            {
+              "id": "2feeca88-e57b-49b9-9ebf-626975c35394",
+              "name": "answer",
+              "value": "={{$json.final_answer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        192,
+        -112
+      ],
+      "id": "df88d74e-4ba4-45f5-9bc8-b3d6205877db",
+      "name": "tools"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "552731a8-0cdb-4147-9ef6-5e5bc27fe46d",
+              "name": "llm",
+              "value": "={{$json.final_answer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        192,
+        96
+      ],
+      "id": "f79490c6-0538-4372-b3bf-9962c708296a",
+      "name": "llm"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "tools",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "llm",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "tools": {
+      "main": [
+        []
+      ]
+    },
+    "llm": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "4a98e772-839d-4b02-a3f9-89b41f31d55d",
+  "meta": {
+    "instanceId": "2e4815e62fcdc67b1338c22f699364e65ea87c5094e050d462d3f190d4153510"
+  },
+  "id": "MP8KByBrodTS2tcw",
+  "tags": []
+}
