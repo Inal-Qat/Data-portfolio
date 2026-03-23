@@ -1,6 +1,6 @@
 # 💼 Applied AI & Agent Systems Portfolio  
 **Author:** Yanal Kat (Inal-Qat)**  
-**MSc Business Information Systems | AI Platform Engineering & Applied Machine Learning**
+**MSc Business Information Systems | Python Backend Developer | AI & Data Applications**
 
 This portfolio showcases production-oriented AI systems that move beyond notebooks into deployable, integration-ready architectures.
 
