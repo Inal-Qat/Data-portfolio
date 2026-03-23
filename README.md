@@ -14,7 +14,7 @@ It combines:
 - Workflow automation (n8n)
 - Observability & containerized deployment
 
-The focus is on building **enterprise-ready AI platforms** — not just models.
+The focus is on building **practical, deployable AI systems and backend services** — not just models.
 
 ---
 
